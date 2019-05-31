@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doge Javascript Exercise</title>
+</head>
+<body>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #doge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%); 
+        }
+
+        .goodBoy {
+            bottom: -200px;
+            left: 200px;
+            position: absolute;
+            visibility: hidden;
+
+            transition: all 3s;
+        }
+
+        .showDoggo {
+            bottom: 0;
+            visibility: visible;
+        }
+    </style>
+
+    
+    <main>
+        <button id="doge">Doggo</button>
+        <img id="dogePic" class="goodBoy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrgOT7kkTdV9O2tY7UxDNuo7TETpv9NWpkFldWOug2qY3AX_Z">
+    </main>
+
+
+    <script>
+        let doggo = document.getElementById('doge');
+        let dogePic = document.getElementById('dogePic');
+
+        doggo.innerHTML = 'Woof!';
+       
+        doggo.addEventListener('mouseover', function( DoggoHover ) {
+            doggo.innerHTML = 'Woof woof!';
+    
+            setTimeout(function() {
+                doggo.innerHTML = 'Doggo';
+            }, 500);
+        });
+
+        doggo.addEventListener('click', function( showGoodboy ) {
+            dogePic.classList.toggle('showDoggo');
+        });
+
+    </script>
+</body>
+</html>
